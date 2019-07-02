@@ -59,9 +59,6 @@ olefile==0.46
 packaging==19.0
 pandas==0.24.2
 pandocfilters==1.4.2
-parso==0.4.0
-patsy==0.5.1
-pexpect==4.7.0
 pickleshare==0.7.5
 Pillow==6.0.0
 prometheus-client==0.6.0
