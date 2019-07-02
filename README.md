@@ -1,12 +1,12 @@
 # Storms-analysis
 
-Using the NOAA extreme weather data to estimate probability of tornado/hail storm/hurricane per US zip codei
+Using the NOAA extreme weather data to estimate probability of tornado/hail storm/hurricane per US zip code.
 
 ## Data 
 Can be downloaded from the following websites
 
-- [Raw NOAA](!https://www2.ncdc.noaa.gov/pub/data/swdi/stormevents/csvfiles/) as `csv` files.
-- [US Zip code](!https://github.com/OpenDataDE/State-zip-code-GeoJSON) as `geojson` files. You can open these using the Python `geopandas` library.
+- [Raw NOAA](https://www2.ncdc.noaa.gov/pub/data/swdi/stormevents/csvfiles/) as `csv` files.
+- [US Zip code](https://github.com/OpenDataDE/State-zip-code-GeoJSON) as `geojson` files. You can open these using the Python `geopandas` library.
 # SQL scripts
 - Files in `sql` can extract subsets of data for analysis. Should be fairly self explanatory.
 
