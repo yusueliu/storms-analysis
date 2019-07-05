@@ -52,9 +52,14 @@ def append_zipcode(query_df, state, state_zipcode_files):
     for point in query_state.geometry:
         correct_zip = np.nan
         for i, poly in zip_geo_df[['GEOID10', 'geometry']].iterrows():
-            if poly['geometry'].contains(point):
-                correct_zip = poly['GEOID10']
-                break
+            try:
+                contains = poly['geometry'].contains(point):
+                if contains == True: 
+                    correct_zip = poly['GEOID10']
+                    break
+            except Exception:
+                print('Invalid polygon')
+                pass
         zip_codes.append(correct_zip)
     query_state['ZIPCODE'] = zip_codes
     return query_state.drop(columns=['geometry'])
@@ -66,7 +71,7 @@ if __name__ == '__main__':
     query_df = create_query_geo_df(query_file)
     states = query_df.STATE.unique()
     state_zipcode_files = generate_state_zipcode_files(states)
-    for state in states[1:]:
+    for state in states[23:]:
         with_zipcode_df = append_zipcode(query_df, state, state_zipcode_files)
         with_zipcode_df.to_csv('../output/{}_events.csv'.format(state), index=False)
     
